@@ -40,7 +40,7 @@ class LinkedList:
         if self.head == None:
             return "List empty my boi"
         
-        if self.head.data == Node(value):
+        if self.head.data == value:
             self.head = self.head.next
         
         previous_node = self.head
@@ -60,6 +60,7 @@ if __name__ == "__main__":
     ll = LinkedList()
     ll.append(1)
     ll.append(2)
+    ll.delete(2)
     ll.prepend(4)
     ll.print_list()
         
