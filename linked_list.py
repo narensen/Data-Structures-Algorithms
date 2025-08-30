@@ -9,6 +9,19 @@ class LinkedList:
         self.head = None
         self.tail = None
 
+    def find_middle(self):
+        slow = self.head
+        fast = self.head
+
+        slow_pos = 0
+        fast_pos = 0
+
+        while fast.next and fast:
+            slow = slow.next
+            fast = fast.next.next
+
+        print((slow_pos + fast_pos)/2)
+
     def print_list(self):
         current = self.head
         while current:
@@ -23,7 +36,6 @@ class LinkedList:
             self.tail = new_node
             return
         
-        # No loop needed. We use the tail pointer.
         self.tail.next = new_node
         self.tail = new_node
 
